@@ -1,0 +1,12 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)TestSummaryReport.cshtml">
+      <Link>Reports\TestSummaryReport.cshtml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)sorttable.js">
+      <Link>Reports\sorttable.js</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>	
+  </ItemGroup>
+</Project>
