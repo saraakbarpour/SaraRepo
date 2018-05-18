@@ -5,9 +5,6 @@ namespace Automation.Configuration
 {
 	public static class Settings
 	{
-		public static string ConnectionString
-			=> ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-
 		public static Uri SiteUrl => new Uri(ConfigurationManager.AppSettings["SiteUrl"]);
 		public static string Target => ConfigurationManager.AppSettings["Target"];
 

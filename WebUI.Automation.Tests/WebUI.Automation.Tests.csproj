@@ -48,6 +48,10 @@
     <Reference Include="nunit.framework, Version=3.8.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.8.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="OpenPop, Version=2.0.6.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenPop.2.0.6.2\lib\net20\OpenPop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RandomNameGenerator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RandomNameGenerator.1.0.4\lib\RandomNameGenerator.dll</HintPath>
       <Private>True</Private>
@@ -71,26 +75,33 @@
     <Reference Include="TechTalk.SpecRun.Common, Version=1.6.0.0, Culture=neutral, PublicKeyToken=d0fc5cc18b3b389b, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecRun.SpecFlow.2-2-0.1.6.0\lib\net45\TechTalk.SpecRun.Common.dll</HintPath>
     </Reference>
-    <Reference Include="WebDriver, Version=3.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.WebDriver.3.5.1\lib\net40\WebDriver.dll</HintPath>
+    <Reference Include="WebDriver, Version=3.11.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.11.1\lib\net45\WebDriver.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=3.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.Support.3.5.1\lib\net40\WebDriver.Support.dll</HintPath>
+    <Reference Include="WebDriver.Support, Version=3.11.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.11.1\lib\net45\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\Login.feature.cs">
+    <Compile Include="Extensions\OpenPopExtensions.cs" />
+    <Compile Include="Features\AccountCreation.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Login.feature</DependentUpon>
+      <DependentUpon>AccountCreation.feature</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DataHelper.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\OpenPopHelper.cs" />
+    <Compile Include="Helpers\TestWaiter.cs" />
     <Compile Include="SetupTearDown\BeforeAfterFeature.cs" />
     <Compile Include="SetupTearDown\BeforeAfterTestRun.cs" />
     <Compile Include="SetupTearDown\BeforeAfterStep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetupTearDown\BeforeAfterScenario.cs" />
+    <Compile Include="Steps\Pages.cs" />
     <Compile Include="Steps\StandardStepsBase.cs" />
-    <Compile Include="Steps\LoginSteps.cs" />
     <Compile Include="Steps\Transforms\RegexTestInput.cs" />
     <Compile Include="Steps\Transforms\StepArgumentTransforms.cs" />
   </ItemGroup>
@@ -101,9 +112,9 @@
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Features\Login.feature">
+    <None Include="Features\AccountCreation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Login.feature.cs</LastGenOutput>
+      <LastGenOutput>AccountCreation.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -124,10 +135,6 @@
     <ProjectReference Include="..\Automation.Configuration\Automation.Configuration.csproj">
       <Project>{35be56e2-33c6-4719-98ed-c46b08257106}</Project>
       <Name>Automation.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Automation.Repositories\Automation.Repositories.csproj">
-      <Project>{252c3a2e-3b3c-44c0-b40c-3207c3751c94}</Project>
-      <Name>Automation.Repositories</Name>
     </ProjectReference>
     <ProjectReference Include="..\WebUI.Automation.Pages\WebUI.Automation.Pages.csproj">
       <Project>{eedcf4c9-f40e-43a0-918f-a7555b4358f0}</Project>

@@ -1,7 +1,6 @@
 using System;
 using Automation.Configuration;
 using Automation.Core.SeleniumUtility;
-using Automation.Repositories.UserManagement;
 using BoDi;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
@@ -37,7 +36,6 @@ namespace WebUI.Automation.Tests.SetupTearDown
 		{
 			RegisterOptions();
 			RegisterWebDriver();
-			RegisterRepos();
 			_webDriver.MaximiseWindow();
 		}
 
@@ -61,15 +59,10 @@ namespace WebUI.Automation.Tests.SetupTearDown
 			_objectContainer.RegisterInstanceAs<IWebDriver>(_webDriver);
 		}
 
-		private void RegisterRepos()
-		{
-			var userManagementRepository = new UserManagementRepository(Settings.ConnectionString);
-			_objectContainer.RegisterInstanceAs(userManagementRepository);
-		}
-
 		private void DisposeWebDriver()
 		{
 			_webDriver.Close();
+			_webDriver.Quit();
 			_webDriver.Dispose();
 		}
 	}

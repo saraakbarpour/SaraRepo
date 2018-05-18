@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace WebUI.Automation.Tests.Steps.Transforms
@@ -6,6 +7,13 @@ namespace WebUI.Automation.Tests.Steps.Transforms
 	[Binding]
 	public class StepArgumentTransforms
 	{
+		[StepArgumentTransformation]
+		public Pages PageNameTransformation(string pageName)
+		{
+			var page = (Pages) Enum.Parse(typeof(Pages), pageName.Replace(" ", string.Empty));
+			return page;
+		}
+
 		[StepArgumentTransformation]
 		public string[] ConvertCommaSeparatedValuesToStringArray(string commaSeparatedValues)
 		{

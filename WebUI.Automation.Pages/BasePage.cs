@@ -1,5 +1,4 @@
 ﻿using Automation.Core.SeleniumUtility;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace WebUI.Automation.Pages
@@ -9,35 +8,26 @@ namespace WebUI.Automation.Pages
 		protected BasePage(IExtendedWebDriver webDriver)
 		{
 			WebDriver = webDriver;
-			Toast = new ToastComponent(WebDriver);
-			WarningDialog = new WarningDialogComponent(WebDriver);
-
 			WebDriver.WaitUntilPageIsLoaded();
 			PageFactory.InitElements(WebDriver, this);
 		}
 
-		public WarningDialogComponent WarningDialog { get; set; }
-
-		[FindsBy(How = How.CssSelector, Using = "[data-auto='PageTitle']")]
-		public IWebElement PageTitle { get; set; }
-
-		public string PageTitleName { get; set; }
-
-		protected IWebElement LoadingOverlay => WebDriver.FindElementByDataAuto("LoadingOverlay");
+		public string PageUrl { get; set; }
 
 		protected IExtendedWebDriver WebDriver { get; }
-		public ToastComponent Toast { get; }
 
 		public virtual bool VerifyPage()
 		{
-			WebDriver.WaitUntilElementExists(PageTitle);
+			try
+			{
+				WebDriver.WaitUntilUrlMatches(PageUrl);
+			}
+			catch
+			{
+				return false;
+			}
 
-			return PageTitle.Text.Equals(PageTitleName);
-		}
-
-		public void WaitForLoadingToComplete()
-		{
-			WebDriver.Wait(driver => !LoadingOverlay.Displayed);
+			return true;
 		}
 	}
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.10
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI.Automation.Tests", "WebUI.Automation.Tests\WebUI.Automation.Tests.csproj", "{5A6F9D21-0704-4E47-86EE-A180D4857945}"
 EndProject
@@ -10,8 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI.Automation.Pages", "WebUI.Automation.Pages\WebUI.Automation.Pages.csproj", "{EEDCF4C9-F40E-43A0-918F-A7555B4358F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI.Automation.WebDriver", "WebUI.Automation.WebDriver\WebUI.Automation.WebDriver.csproj", "{3EDA95FE-0D0E-40A5-BFC0-979C6C281520}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation.Repositories", "Automation.Repositories\Automation.Repositories.csproj", "{252C3A2E-3B3C-44C0-B40C-3207C3751C94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{3EDA95FE-0D0E-40A5-BFC0-979C6C281520}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EDA95FE-0D0E-40A5-BFC0-979C6C281520}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EDA95FE-0D0E-40A5-BFC0-979C6C281520}.Release|Any CPU.Build.0 = Release|Any CPU
-		{252C3A2E-3B3C-44C0-B40C-3207C3751C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{252C3A2E-3B3C-44C0-B40C-3207C3751C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{252C3A2E-3B3C-44C0-B40C-3207C3751C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{252C3A2E-3B3C-44C0-B40C-3207C3751C94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
