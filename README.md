@@ -11,7 +11,8 @@
 #### What you need to do:
 
 1. Fork this repository and implement your solution in your fork.
-2. Create Page Objects to represent the screens of Gmail.
-3. Create and implement step definitions to acutally verify the acceptance criteria documented in feature files.
-4. Enhance the framework if you can or raise any ideas of how to improve the automation framework.
-5. Share the fork with us, along with a most recently executed html report.
+2. Create or update scenarios if you could identify gaps in acceptance criteria.
+3. Create Page Objects to represent pages of the account creation UI.
+4. Create and implement step definitions to acutally verify the acceptance criteria documented in feature files.
+5. Enhance the framework if you can or raise any ideas of how to improve the automation framework.
+6. Share the fork with us, along with a most recently executed html report.
