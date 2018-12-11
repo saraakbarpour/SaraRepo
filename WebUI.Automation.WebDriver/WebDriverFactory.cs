@@ -27,8 +27,8 @@ namespace WebUI.Automation.WebDriver
 			switch (key)
 			{
 				case "Firefox":
-					var profile = new FirefoxProfile {AcceptUntrustedCertificates = true};
-					return new FirefoxDriver(profile);
+					var profile = new FirefoxProfile { AcceptUntrustedCertificates = true};
+					return new FirefoxDriver(new FirefoxOptions { Profile = profile });
 				case "Internet Explorer":
 				case "IE":
 					var ieOptions = new InternetExplorerOptions {IntroduceInstabilityByIgnoringProtectedModeSettings = true};

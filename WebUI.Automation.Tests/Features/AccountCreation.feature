@@ -4,6 +4,7 @@ Feature: Account Creation
 	I want to sign up for a zen account
 	so that I can use Zen products
 
+
 	Scenario: Create an account successfully
 		Given I am on the 'Account Creation' page
 		And I have filled out all my details correctly
@@ -12,7 +13,7 @@ Feature: Account Creation
 		Then I am redirected to the 'Email Sent Confirmation' page
 		And an account activation email is sent to my email address
 
-
+	
 	Scenario: Unable to create a duplicate account
 		Given I have already created my account
 		And I have filled out all my details using the same email address

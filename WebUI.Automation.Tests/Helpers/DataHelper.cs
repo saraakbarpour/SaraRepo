@@ -11,7 +11,7 @@ namespace WebUI.Automation.Tests.Helpers
 
 		public static string GenerateRandomName()
 		{
-			var genderList = new List<Gender> {Gender.Female, Gender.Male};
+			var genderList = new List<Gender> { Gender.Female, Gender.Male };
 			return NameGenerator.Generate(genderList.ElementAt(Random.Next(0, genderList.Count)));
 		}
 	}

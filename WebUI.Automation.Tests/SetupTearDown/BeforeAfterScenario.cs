@@ -13,7 +13,9 @@ namespace WebUI.Automation.Tests.SetupTearDown
 	public class BeforeAfterScenario
 	{
 		private readonly IObjectContainer _objectContainer;
+
 		private readonly WebDriverFactory _webDriverFactory = new WebDriverFactory();
+		private Options _options;
 		private IExtendedWebDriver _webDriver;
 
 		public BeforeAfterScenario(IObjectContainer objectContainer)
@@ -47,14 +49,15 @@ namespace WebUI.Automation.Tests.SetupTearDown
 
 		private void RegisterOptions()
 		{
-			var options = new Options {SiteUri = Settings.SiteUrl};
-			_objectContainer.RegisterInstanceAs(options);
+			_options = new Options {SiteUri = Settings.SiteUrl};
+			_objectContainer.RegisterInstanceAs(_options);
 		}
 
 		private void RegisterWebDriver()
 		{
 			var webDriver = _webDriverFactory.Create(Settings.Target);
-			_webDriver = new ExtendedWebDriver(webDriver, new ExtendedWebDriverOptions {Timeout = Settings.PageTimeout});
+			_webDriver =
+				new ExtendedWebDriver(webDriver, new ExtendedWebDriverOptions {Timeout = Settings.PageTimeout});
 			_objectContainer.RegisterInstanceAs(_webDriver);
 			_objectContainer.RegisterInstanceAs<IWebDriver>(_webDriver);
 		}

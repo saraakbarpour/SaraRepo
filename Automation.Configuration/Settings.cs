@@ -7,6 +7,7 @@ namespace Automation.Configuration
 	{
 		public static Uri SiteUrl => new Uri(ConfigurationManager.AppSettings["SiteUrl"]);
 		public static string Target => ConfigurationManager.AppSettings["Target"];
+		public static string DbConnection => ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
 
 		public static TimeSpan PageTimeout
 			=> new TimeSpan(0, 0, Convert.ToInt32(ConfigurationManager.AppSettings["PageTimeOut"]));
