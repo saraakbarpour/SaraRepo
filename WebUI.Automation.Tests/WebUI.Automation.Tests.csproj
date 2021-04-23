@@ -103,6 +103,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountCreation.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\AccountCreationSteps.cs" />
     <Compile Include="Helpers\ConsumerHelper.cs" />
     <Compile Include="Helpers\DataHelper.cs" />
     <Compile Include="Helpers\FileHelper.cs" />

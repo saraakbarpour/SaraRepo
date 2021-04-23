@@ -50,6 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountCreation\AccountVerification.cs" />
     <Compile Include="AccountCreation\AccountCreationPage.cs" />
     <Compile Include="BasePage.cs" />
     <Compile Include="Options.cs" />
