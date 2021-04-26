@@ -80,7 +80,7 @@ namespace WebUI.Automation.Tests.Features
 #line 9
   testRunner.Given("I am on the \'Account Creation\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
-  testRunner.And("I have filled out all my details correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I have filled out all my details \"Sara\" \"akbarpour.sara@gmail.com\" \"vazkon4321\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
   testRunner.And("I have accepted the Terms of Service", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
@@ -88,155 +88,8 @@ namespace WebUI.Automation.Tests.Features
 #line 13
   testRunner.Then("I am redirected to the \'Email Sent Confirmation\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
-  testRunner.And("an account activation email is sent to my email address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Unable to create a duplicate account", SourceLine=16)]
-        public virtual void UnableToCreateADuplicateAccount()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unable to create a duplicate account", null, ((string[])(null)));
-#line 17
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 18
-  testRunner.Given("I have already created my account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 19
-  testRunner.And("I have filled out all my details using the same email address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 20
-  testRunner.When("I submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 21
-  testRunner.Then("I see a validation error \'Email address is already in use. Try another.\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 22
-  testRunner.And("a duplicate account is not created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        public virtual void UnableToCreateAnAccountWithInvalidDetails(string exampleDescription, string field, string errorMessage, string[] exampleTags)
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unable to create an account with invalid details", null, exampleTags);
-#line 25
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 26
-  testRunner.Given(string.Format("I am creating account with an invalid \'{0}\'", field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 27
-  testRunner.When("I attempt to submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 28
-  testRunner.Then("the submit button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 29
-  testRunner.And(string.Format("I see a validation error \'{0}\'", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Unable to create an account with invalid details, Email is invalid", SourceLine=32)]
-        public virtual void UnableToCreateAnAccountWithInvalidDetails_EmailIsInvalid()
-        {
-#line 25
- this.UnableToCreateAnAccountWithInvalidDetails("Email is invalid", "Email", "Invalid email", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Unable to create an account with invalid details, Password is invalid", SourceLine=32)]
-        public virtual void UnableToCreateAnAccountWithInvalidDetails_PasswordIsInvalid()
-        {
-#line 25
- this.UnableToCreateAnAccountWithInvalidDetails("Password is invalid", "Password", "Use at least 6 characters. Include letters and numbers", ((string[])(null)));
-#line hidden
-        }
-        
-        public virtual void UnableToCreateAnAccountWithIncompleteDetails(string exampleDescription, string field, string[] exampleTags)
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unable to create an account with incomplete details", null, exampleTags);
-#line 37
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 38
-  testRunner.Given(string.Format("I am creating account with a missing \'{0}\'", field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 39
-  testRunner.When("I attempt to submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 40
-  testRunner.Then("the submit button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Unable to create an account with incomplete details, Name is not filled", SourceLine=43)]
-        public virtual void UnableToCreateAnAccountWithIncompleteDetails_NameIsNotFilled()
-        {
-#line 37
- this.UnableToCreateAnAccountWithIncompleteDetails("Name is not filled", "Name", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Unable to create an account with incomplete details, Email is not filled", SourceLine=43)]
-        public virtual void UnableToCreateAnAccountWithIncompleteDetails_EmailIsNotFilled()
-        {
-#line 37
- this.UnableToCreateAnAccountWithIncompleteDetails("Email is not filled", "Email", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Unable to create an account with incomplete details, Password is not filled", SourceLine=43)]
-        public virtual void UnableToCreateAnAccountWithIncompleteDetails_PasswordIsNotFilled()
-        {
-#line 37
- this.UnableToCreateAnAccountWithIncompleteDetails("Password is not filled", "Password", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Unable to create an account with incomplete details, Confirm Password is not fill" +
-            "ed", SourceLine=43)]
-        public virtual void UnableToCreateAnAccountWithIncompleteDetails_ConfirmPasswordIsNotFilled()
-        {
-#line 37
- this.UnableToCreateAnAccountWithIncompleteDetails("Confirm Password is not filled", "Confirm Password", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Unable to create an account with incomplete details, ToS not accepted", SourceLine=43)]
-        public virtual void UnableToCreateAnAccountWithIncompleteDetails_ToSNotAccepted()
-        {
-#line 37
- this.UnableToCreateAnAccountWithIncompleteDetails("ToS not accepted", "Terms of Service", ((string[])(null)));
-#line hidden
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("View Terms of Service during account creation", SourceLine=50)]
-        public virtual void ViewTermsOfServiceDuringAccountCreation()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View Terms of Service during account creation", null, ((string[])(null)));
-#line 51
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 52
-  testRunner.Given("I am creating account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 53
-  testRunner.When("I choose to view the Terms of Service", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 54
-  testRunner.Then("I am presented with the Terms of Service", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 55
-  testRunner.And("my account details are still in place", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Unable to create an account with mismatch passwords", SourceLine=57)]
-        public virtual void UnableToCreateAnAccountWithMismatchPasswords()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unable to create an account with mismatch passwords", null, ((string[])(null)));
-#line 58
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 59
-  testRunner.Given("I am creating account with mismatch passwords", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 60
-  testRunner.When("I attempt to submit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 61
-  testRunner.Then("the submit button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.And("an account activation email is sent to my email address \"akbarpour.sara@gmail.com" +
+                    "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -250,3 +103,4 @@ namespace WebUI.Automation.Tests.Features
 }
 #pragma warning restore
 #endregion
+

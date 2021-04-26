@@ -3,9 +3,10 @@ using Automation.Core.SeleniumUtility;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
+
 namespace WebUI.Automation.Pages.AccountCreation
 {
-	public class AccountCreationPage : BasePage
+	public class AccountCreationPage :BasePage
 	{
         [FindsBy(How = How.Id, Using = "Name")] private static IWebElement nameTextbox;
 
@@ -18,9 +19,28 @@ namespace WebUI.Automation.Pages.AccountCreation
         [FindsBy(How = How.Id, Using = "AcceptTermsAndConditions")] private static IWebElement AcceptTermsAndConditions;
 
         [FindsBy(How = How.Id, Using = "btnCreateAccount")] private static IWebElement createAccountButton;
+        private IWebDriver driver;
+
         public AccountCreationPage(IExtendedWebDriver webDriver, Options options) : base(webDriver)
         {
             PageUrl = new Uri(options.SiteUri, "Account/Create").ToString();
+           
+            PageFactory.InitElements(driver, this);
+        }
+
+
+        //public AccountCreationPage() 
+        //{
+
+        //    PageFactory.InitElements(driver, this);
+        //}
+
+        public driver  NavigateToURL()
+        {
+            driver.Navigate().GoToUrl("https://wifi-test.zenhq.com/Account/Create");
+            PageFactory.InitElements(driver, this);
+            
+            
         }
 
         public void EnterName(string name)

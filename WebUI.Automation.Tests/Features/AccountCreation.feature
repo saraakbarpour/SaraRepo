@@ -6,13 +6,15 @@ Feature: Account Creation
 
 
 	Scenario: Create an account successfully
-		Given I am on the 'Account Creation' page
-		And I have filled out all my details correctly
+		Given I am on the 'Account Creation' page 
+		And I have filled out all my details "Sara" "akbarpour.sara@gmail.com" "vazkon4321"
 		And I have accepted the Terms of Service
 		When I submit
 		Then I am redirected to the 'Email Sent Confirmation' page
-		And an account activation email is sent to my email address
+		And an account activation email is sent to my email address "akbarpour.sara@gmail.com"
 
+	#	| name | Email    | password                                          |
+#		| Sara    | akbarpour.sara@gmail.com    | vazkon4321                                          |
 	
 #	Scenario: Unable to create a duplicate account
 #		Given I have already created my account
